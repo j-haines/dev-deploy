@@ -1,0 +1,6 @@
+---
+remote_users:
+  - name: jhaines
+    sudoer: true
+    shell: zsh
+    ssh_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0XRFwjeS/XPVLvYKwVgdYWMQJU3PnNie/P3mgbm0s2q8Rg8ai1o+XSOsiqyJn7+FN8TxJc9Ko/kvjLzEyKBZgepgoN8xpYEiQzyu80qgOGHfRzAjU1UE25wQxGR6w4YYPOKyOSt7o3X2+imOQTr2Eubfd5f+43v0M28jirrWO+pZle6YDFBeQy+zsx3mFNyMCxDeIgQhDISlAnv9X7qWyMDnX9sTdY9L8eXvBS3kZkHiGPKO6Xt/t0GuEXjrt37MHXWEBwvzpA8JVXYM0xP6uvCiMKqzn1oi+LHF30Qr6RvuxDDhWbQr5w6SbQzpWsZYcW6jK4hFF2yzaDtnuKz9jsWcKbXa4nlV4G1UE3r/XCrWZTBlAxhQzEsPiWZjT5aIGxIwK5StvGLlzQkQjnJQnjT4fxrZORqmU9SUdbe0Qvjjd+SLdtoOvLhkEQul9bJUzySQ406GFmrdMLy/9pfBWRV67BBaRCiQjtkBxXN0mfPQ0bajWB+Tjm5l4+hLNmEM=

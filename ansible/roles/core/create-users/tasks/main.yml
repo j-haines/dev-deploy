@@ -1,0 +1,25 @@
+---
+- name: create remote users
+  user:
+    name: "{{ item.name }}"
+    state: present
+    create_home: true
+    generate_ssh_key: true
+    skeleton: /etc/skel
+    shell: "/usr/bin/{{ item.shell }}"
+  loop: "{{ remote_users }}"
+
+- name: enable password-less sudo for sudo users
+  template:
+    src: 99-sudoer.j2
+    dest: "/etc/sudoers.d/99-{{ item.name }}"
+  vars:
+    user: "{{ item.name }}"
+  loop: "{{ remote_users }}"
+  when: item.sudoer
+
+- name: authorize user ssh keys
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.ssh_public_key }}"
+  loop: "{{ remote_users }}"

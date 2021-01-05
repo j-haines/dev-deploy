@@ -1,0 +1,43 @@
+---
+- name: add nginx stable repo from PPA
+  apt_repository:
+      repo: "ppa:nginx/stable"
+
+- name: install devserver system packages
+  apt:
+    name:
+    - git
+    - nginx
+    - python3
+    - sudo
+    - zsh
+    state: present
+    update_cache: true
+
+- name: download zprezto
+  git:
+    recursive: true
+    accept_hostkey: true
+    repo: https://github.com/sorin-ionescu/prezto.git
+    dest: /etc/zprezto
+
+- name: copy zprezto repo
+  copy:
+    src: /etc/zprezto/
+    dest: /etc/skel/.zprezto
+    remote_src: true
+    mode: 0775
+
+- name: copy zprezto rc files
+  copy:
+    src: "/etc/zprezto/runcoms/{{ item }}"
+    dest: "/etc/skel/.{{ item }}"
+    remote_src: true
+    mode: 0664
+  loop:
+    - zlogin
+    - zlogout
+    - zpreztorc
+    - zprofile
+    - zshenv
+    - zshrc

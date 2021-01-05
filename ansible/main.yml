@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+
+  roles:
+    - core/install-deps
+    - core/create-users
+    - core/update-pkgs

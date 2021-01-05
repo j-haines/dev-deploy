@@ -1,0 +1,4 @@
+---
+devservers:
+  hosts:
+    devserver.gobny.me:

@@ -1,0 +1,4 @@
+---
+- name: update system-wide packages
+  apt:
+    upgrade: full
