@@ -1,5 +1,7 @@
 pwd = $(shell pwd)
 
+SHELL := /bin/bash
+
 ANSIBLE_DIR ?= "${pwd}/ansible"
 PACKER_DIR ?= "${pwd}/packer"
 TERRAFORM_DIR ?= "${pwd}/terraform"

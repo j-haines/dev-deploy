@@ -1,11 +1,25 @@
 ---
-- name: add nginx stable repo from PPA
+- name: add nginx repo from PPA
   apt_repository:
-      repo: "ppa:nginx/stable"
+      repo: ppa:nginx/stable
+
+- name: add docker repo GPG key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: add docker repo
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+    state: present 
 
 - name: install devserver system packages
   apt:
     name:
+    - ansible
+    - containerd.io
+    - docker-ce
+    - docker-ce-cli
     - git
     - nginx
     - python3
@@ -13,6 +27,14 @@
     - zsh
     state: present
     update_cache: true
+
+- name: download docker-compose
+  get_url:
+    url: "https://github.com/docker/compose/releases/download/1.28.2/docker-compose-Linux-x86_64"
+    dest: /usr/local/bin/docker-compose
+    mode: 0775
+    owner: root
+    group: root
 
 - name: download zprezto
   git:
