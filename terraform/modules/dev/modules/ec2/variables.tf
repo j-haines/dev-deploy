@@ -28,3 +28,7 @@ variable "subnet" {
     subnet_id = string
   })
 }
+
+variable "volume_id" {
+  type = string
+}

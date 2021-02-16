@@ -53,3 +53,9 @@ resource "aws_instance" "instance" {
     }
   )
 }
+
+resource "aws_volume_attachment" "home" {
+  device_name = "/dev/sdh"
+  volume_id   = var.volume_id
+  instance_id = aws_instance.instance.id
+}

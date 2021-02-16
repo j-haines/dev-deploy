@@ -23,6 +23,8 @@ module "dev" {
   instance_type = local.instance_type
   ssh_key_pair  = local.ssh_key_pair
 
+  user = local.remote_user
+
   default_tags = {
     AwsRegion = local.aws_region
   }

@@ -19,6 +19,10 @@ variable "ssh_key_pair" {
   type = string
 }
 
+variable "user" {
+  type = string
+}
+
 variable "default_tags" {
   type = map(string)
 }

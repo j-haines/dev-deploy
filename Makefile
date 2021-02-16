@@ -18,6 +18,10 @@ packer:
 	pushd "${PACKER_DIR}" \
 	&& packer build -var-file=devserver.pkrvars.hcl .
 
+terraform-plan:
+	pushd "${TERRAFORM_DIR}" \
+	&& terraform plan
+
 terraform: terraform-fmt
 	pushd "${TERRAFORM_DIR}" \
 	&& terraform apply -auto-approve

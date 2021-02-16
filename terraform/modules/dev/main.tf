@@ -21,11 +21,18 @@ module "security" {
   aws_region = var.aws_region
 }
 
+module "ebs" {
+  source = "./modules/ebs"
+
+  user = var.user
+}
+
 module "ec2" {
   source = "./modules/ec2"
 
   security_group_id = module.security.security_group_id
   subnet            = module.network.subnet
+  volume_id         = module.ebs.volume_id
 
   ami_id        = var.ami_id
   default_tags  = var.default_tags

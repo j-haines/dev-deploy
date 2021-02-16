@@ -5,6 +5,6 @@ locals {
 
   fqdn          = "gobny.me"
   instance_type = "t3.micro"
-  remote_user   = "pangu"
+  remote_user   = "jhaines"
   ssh_key_pair  = "pangu"
 }

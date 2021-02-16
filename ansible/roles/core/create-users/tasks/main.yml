@@ -21,6 +21,8 @@
 
 - name: authorize user ssh keys
   authorized_key:
-    user: "{{ item.name }}"
-    key: "{{ item.ssh_public_key }}"
-  loop: "{{ remote_users }}"
+    user: "{{ item.0.name }}"
+    key: "{{ item.1 }}"
+  with_subelements:
+    - "{{ remote_users }}"
+    - ssh_public_keys
