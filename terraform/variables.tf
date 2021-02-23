@@ -4,7 +4,7 @@ locals {
   aws_profile = "pangu"
 
   fqdn          = "gobny.me"
-  instance_type = "t3.micro"
+  instance_type = "t3.small"
   remote_user   = "jhaines"
   ssh_key_pair  = "pangu"
 }
