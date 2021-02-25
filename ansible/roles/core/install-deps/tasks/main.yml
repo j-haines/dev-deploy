@@ -33,6 +33,7 @@
     - g++
     - gdb
     - git
+    - make
     - nginx
     - packer
     - python3

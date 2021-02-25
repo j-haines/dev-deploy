@@ -1,4 +1,6 @@
 ---
+home_volume_uuid: 429c460f-f856-4f98-bd8d-b5b1a488983b
+
 remote_users:
   - name: jhaines
     sudoer: true

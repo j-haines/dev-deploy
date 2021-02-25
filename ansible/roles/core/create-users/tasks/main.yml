@@ -10,6 +10,14 @@
     groups: "{{ item.groups }}"
   loop: "{{ remote_users }}"
 
+- name: create /home volume fstab entry
+  mount:
+    path: /home
+    src: "UUID={{ home_volume_uuid }}"
+    fstype: ext4
+    opts: rw,relatime
+    state: present
+
 - name: enable password-less sudo for sudo users
   template:
     src: 99-sudoer.j2
