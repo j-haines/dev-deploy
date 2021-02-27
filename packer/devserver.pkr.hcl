@@ -5,8 +5,13 @@ source "amazon-ebs" "devserver" {
 
     ami_name = "packer-devserver-${var.aws_region}-{{ timestamp }}"
     ami_virtualization_type = "hvm"
-    instance_type = "t3.micro"
+    instance_type = "t3.small"
     ssh_username = "ubuntu"
+
+    launch_block_device_mappings {
+        device_name = "/dev/sda1"
+        volume_size = 16
+    }
 
     tags = {
         Service = "devserver"

@@ -39,7 +39,6 @@
     - git
     - golang-go
     - make
-    - nginx
     - packer
     - python3
     - sudo
