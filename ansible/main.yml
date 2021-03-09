@@ -6,3 +6,6 @@
     - core/install-deps
     - core/create-users
     - core/update-pkgs
+    - geerlingguy.certbot
+  vars_files:
+    - vars/certbot.yml

@@ -9,6 +9,8 @@ TERRAFORM_DIR ?= "${pwd}/terraform"
 ansible-galaxy:
 	ansible-galaxy collection install \
 		community.general
+	ansible-galaxy install \
+		geerlingguy.certbot
 
 ansible:	
 	pushd "${ANSIBLE_DIR}" \

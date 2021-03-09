@@ -34,7 +34,7 @@ build {
     ]
 
     provisioner "ansible" {
-        playbook_file = "${var.ansible_dir}/main.yml"
+        playbook_file = "${var.ansible_dir}/packer.yml"
         extra_arguments = [
             "--extra-vars", "ansible_remote_tmp=/tmp"
         ]

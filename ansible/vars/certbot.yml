@@ -1,0 +1,13 @@
+---
+certbot_auto_renew: true
+# certbot_auto_renew_user: pangu
+certbot_auto_renew_hour: "3"
+certbot_auto_renew_minute: "30"
+
+certbot_create_if_missing: true
+certbot_create_method: standalone
+certbot_create_standalone_stop_services: []
+certbot_admin_email: me@jhain.es
+certbot_certs:
+  - domains:
+    - devserver.gobny.me

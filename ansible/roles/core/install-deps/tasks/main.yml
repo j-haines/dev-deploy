@@ -39,6 +39,8 @@
     - git
     - golang-go
     - make
+    - nodejs
+    - npm
     - packer
     - python3
     - sudo
