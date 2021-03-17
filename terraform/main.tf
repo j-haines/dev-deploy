@@ -5,6 +5,14 @@ terraform {
       version = "~> 3.0"
     }
   }
+
+  backend "s3" {
+    bucket = "tf-state-gobny"
+    key    = "devserver-or"
+
+    profile = "pangu"
+    region = "us-west-2"
+  }
 }
 
 provider "aws" {
